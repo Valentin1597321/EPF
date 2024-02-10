@@ -1,0 +1,52 @@
+def vérif_vertical(grille, pion):
+    # Vérifie les victoires en colonne
+    for col in range(7):
+        for ligne in range(3):
+            if grille[ligne][col] == pion and \
+               grille[ligne + 1][col] == pion and \
+               grille[ligne + 2][col] == pion and \
+               grille[ligne + 3][col] == pion:
+                return True
+    return False
+
+def vérif_horizontal(grille, player):
+    # Vérifie les victoires en ligne
+    for ligne in range(6):
+        for col in range(4):
+            if grille[ligne][col] == pion and \
+               grille[ligne][col + 1] == pion and \
+               grille[ligne][col + 2] == pion and \
+               grille[ligne][col + 3] == pion:
+                return True
+    return False
+
+def vérif_diagonal_right(grille, pion):
+    # Vérifie les victoires en diagonale vers la droite
+    for ligne in range(3):
+        for col in range(4):
+            if grille[ligne][col] == pion and \
+               grille[ligne + 1][col + 1] == pion and \
+               grille[ligne + 2][col + 2] == pion and \
+               grille[ligne + 3][col + 3] == pion:
+                return True
+    return False
+
+def vérif_diagonal_left(grille, pion):
+    # Vérifie les victoires en diagonale vers la gauche
+    for ligne in range(3):
+        for col in range(3, 7):
+            if grille[ligne][col] == pion and \
+               grille[ligne + 1][col - 1] == pion and \
+               grille[ligne + 2][col - 2] == pion and \
+               grille[ligne + 3][col - 3] == pion:
+                return True
+    return False
+
+def vérification(grille, pion):
+    if (vérif_vertical(grille, pion) or
+        vérif_horizontal(grille, pion) or
+        vérif_diagonal_right(grille, pion) or
+        vérif_diagonal_left(grille, pion)):
+        print("Le joueur", pion, "a gagné!")
+    else:
+        print("Pas de victoire pour le joueur", pion)
