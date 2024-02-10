@@ -22,7 +22,7 @@ def vérif_vertical(grille, pion):
 
 
 
-def vérif_diagonal_right(grille, pion):
+def vérif_diagonal_droite(grille, pion):
     # Vérifie les victoires en diagonale vers la droite
     for ligne in range(3):
         for col in range(4):
@@ -33,7 +33,7 @@ def vérif_diagonal_right(grille, pion):
                 return True
     return False
 
-def vérif_diagonal_left(grille, pion):
+def vérif_diagonal_gauche(grille, pion):
     # Vérifie les victoires en diagonale vers la gauche
     for ligne in range(3):
         for col in range(3, 7):
