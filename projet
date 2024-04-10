@@ -1,1 +1,10 @@
+tableau = []
 
+for i in range(10):
+    ligne = []
+    for j in range(20):
+        ligne.append(0)
+    tableau.append(ligne)
+
+for ligne in tableau:
+    print(ligne)
